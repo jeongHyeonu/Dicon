@@ -5,13 +5,25 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test.unity
     guid: 315173f3420c8cc48bba26842eab5a81
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Main.unity
     guid: 785d795fd5594dd49b5fa632c5d51f0f
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/StartScene.unity
+    guid: 8fce2a03a6a26c543aec31feeaa864b2
+  - enabled: 1
+    path: Assets/Scenes/DroneCollapse.unity
+    guid: e8e2a15de5946724ebd89c22ad003569
+  - enabled: 1
+    path: Assets/Scenes/DroneFire.unity
+    guid: 7e0218e18857ccf4ebeaa8715e3b8690
+  - enabled: 1
+    path: Assets/Scenes/DroneMountain.unity
+    guid: 0a80958d6295118428757dfa263d8192
   m_configObjects: {}
