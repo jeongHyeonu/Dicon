@@ -10,7 +10,7 @@ public class DroneSpray : MonoBehaviour
     [SerializeField] GameObject targetObj;
     [SerializeField] ParticleSystem extParticle;
     [SerializeField] GameObject droneFireBtn;
-    float cooltime = 7f;
+    float cooltime = 5f;
 
     // Start is called before the first frame update
     void Start()

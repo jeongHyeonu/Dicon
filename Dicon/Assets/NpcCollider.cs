@@ -6,7 +6,6 @@ public class NpcCollider : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.tag);
         if(other.tag.Equals("drone"))
         {
             DroneGameManager.instance.PlusScore(1);

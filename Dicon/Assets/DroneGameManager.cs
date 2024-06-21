@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -12,20 +13,21 @@ public class DroneGameManager : MonoBehaviour
         instance = this;
     }
 
-    [SerializeField] bool isStart;
-    [SerializeField] GameObject drone_ui;
-    [SerializeField] GameObject end_ui;
-    [SerializeField] GameObject start_ui;
-    [SerializeField] TextMeshProUGUI timerTxt;
-    [SerializeField] TextMeshProUGUI endTxt;
-    [SerializeField] TextMeshProUGUI finded;
-    [SerializeField] float time = 120f;
-    [SerializeField] float curTime;
+    [SerializeField] protected bool isStart;
+    [SerializeField] protected GameObject drone_ui;
+    [SerializeField] protected GameObject end_ui;
+    [SerializeField] protected GameObject start_ui;
+    [SerializeField] protected TextMeshProUGUI timerTxt;
+    [SerializeField] protected TextMeshProUGUI endTxt;
+    [SerializeField] protected TextMeshProUGUI finded;
+    [SerializeField] protected float time = 120f;
+    [SerializeField] protected float curTime;
+    [SerializeField] protected GameObject drone;
 
-    int maxScore = 5;
-    int score;
-    int minute;
-    int second;
+    protected int maxScore = 5;
+    protected int score;
+    protected int minute;
+    protected int second;
 
     public void StartGame()
     {
@@ -40,6 +42,8 @@ public class DroneGameManager : MonoBehaviour
         isStart = false;
         drone_ui.SetActive(false);
         end_ui.SetActive(true);
+        drone.GetComponent<DroneLeftController>().enabled = false;
+        drone.GetComponent<DroneRightController>().enabled = false;
     }
 
     IEnumerator StartTimer()
@@ -66,9 +70,9 @@ public class DroneGameManager : MonoBehaviour
     {
         score += _score;
         finded.text = "찾은 요구조자 수 : " + score.ToString() + " / " + maxScore;
+        finded.DOColor(Color.white, 1f).From(Color.green);
         if(score == maxScore)
         {
-            isStart = false;
             endTxt.text = "성공! 요구조자를 전부 찾았습니다!";
             EndGame();
         }

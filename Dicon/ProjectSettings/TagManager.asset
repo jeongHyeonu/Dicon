@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - AICars
   - drone
+  - Obstacle
+  - fire
   layers:
   - Default
   - TransparentFX
@@ -15,7 +17,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Obstacle
   - 
   - 
   - 
